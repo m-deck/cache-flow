@@ -100,7 +100,7 @@ def dashboard_ids_to_query_ids(
                         try:
                             query_ids_to_cache.append(dashboard_element["result_maker"]["query_id"])
                         except TypeError:
-                            print("TypeError, skipping")
+                            pass # some tiles may not have result_maker
                 else:
                     print("dashboard_element is None, skipping")
             except AttributeError:
