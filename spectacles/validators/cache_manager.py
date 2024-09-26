@@ -96,6 +96,8 @@ def dashboard_ids_to_query_ids(
                 if dashboard_element is not None:
                     if dashboard_element["query_id"] is not None:
                         query_ids_to_cache.append(dashboard_element["query_id"])
+                    else:
+                        query_ids_to_cache.append(dashboard_element["result_maker"]["query_id"])
                 else:
                     print("dashboard_element is None, skipping")
             except AttributeError:
